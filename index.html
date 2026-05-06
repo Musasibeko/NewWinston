@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,6 +108,9 @@
       align-items: center;
       padding: 7rem 0 4rem;
       gap: 2rem;
+    }
+    .hero-text {
+      padding-left: 0;
     }
     .hero-text h1 {
       font-size: clamp(2.6rem, 6vw, 5rem);
@@ -477,17 +482,80 @@
       50%       { box-shadow: 0 8px 50px rgba(37,211,102,0.65); }
     }
 
-    /* ── Responsive ── */
+    /* ── Responsive fixes for alignment ── */
     @media (max-width: 991px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 6rem; }
-      .hero-image-wrap { height: 55vw; max-height: 400px; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero { 
+        grid-template-columns: 1fr; 
+        min-height: auto; 
+        padding-top: 6rem;
+      }
+      .hero-text {
+        padding-left: 0;
+        text-align: center;
+      }
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .divider {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .hero-image-wrap { 
+        height: 55vw; 
+        max-height: 400px;
+        margin-top: 1rem;
+      }
+      .gallery-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+      }
+      .about-text {
+        text-align: center;
+      }
+      .stat-block {
+        justify-content: center;
+      }
     }
     @media (max-width: 575px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-      .hero-buttons { flex-direction: column; }
-      .btn-primary-gold, .btn-outline-cream { text-align: center; justify-content: center; }
-      .stat-block { gap: 1.5rem; }
+      .gallery-grid { 
+        grid-template-columns: 1fr; 
+      }
+      .hero-buttons { 
+        flex-direction: column; 
+        align-items: stretch;
+      }
+      .btn-primary-gold, .btn-outline-cream { 
+        text-align: center; 
+        justify-content: center; 
+      }
+      .stat-block { 
+        gap: 1.5rem; 
+        justify-content: center;
+      }
+      .hero-text h1 {
+        text-align: center;
+      }
+      .hero-badge {
+        font-size: 0.65rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+
+    /* Fix for container alignment on all screens */
+    .container {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1140px;
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
 
     /* ── Fade-in on scroll ── */
@@ -500,6 +568,7 @@
   </style>
 </head>
 <body>
+
 
   <!-- ══ NAVBAR ══ -->
   <nav class="navbar navbar-expand-lg">
@@ -541,16 +610,13 @@
       </div>
     </div>
     <div class="hero-image-wrap fade-up">
-      <!--
-        HERO IMAGE — add pictures/hero.jpg (your best piece)
-      -->
-      <img src="pictures/hero.jpg"
+      <!-- HERO IMAGE - place your hero image in the same folder as index.html and name it hero.jpg -->
+      <img src="./hero.jpg"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
            alt="Winston Thekiso artwork" />
       <div class="img-placeholder" style="display:none; height:100%;">
         <i class="bi bi-image"></i>
-        
-<img src="./hero.jpg">
+        <span>Add hero.jpg</span>
       </div>
       <div class="hero-badge">
         <span style="color:var(--gold);">✦</span> Originals · Direct from Studio
@@ -593,12 +659,11 @@
         <!-- CARD 1 -->
         <div class="art-card fade-up">
           <div class="art-card-img">
-            <!-- Add: pictures/rose.jpg -->
-            <img src="pictures/rose.jpg"
+            <img src="./rose.jpg"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  alt="The Earthen Rose" />
             <div class="img-placeholder" style="display:none;">
-              <i class="bi bi-image"></i><span> pictures/rosa.jpg</span>
+              <i class="bi bi-image"></i><span>rose.jpg</span>
             </div>
             <div class="art-card-overlay">
               <a class="overlay-wa"
@@ -621,17 +686,18 @@
               <i class="bi bi-whatsapp"></i> Enquire on WhatsApp →
             </a>
           </div>
-        </div>
+    </div>
+        
 
-        <!-- CARD 2 -->
+
+           <!-- CARD 2 -->
         <div class="art-card fade-up">
           <div class="art-card-img">
-            <!-- Add: pictures/leaf-face.jpg -->
-            <img src="pictures/leaf-face.jpg"
+            <img src="./leaf-face.jpg"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  alt="Wrapped in Leaves" />
             <div class="img-placeholder" style="display:none;">
-              <i class="bi bi-image"></i><span>pictures/leaf-face.jpg</span>
+              <i class="bi bi-image"></i><span>leaf-face.jpg</span>
             </div>
             <div class="art-card-overlay">
               <a class="overlay-wa"
@@ -659,12 +725,11 @@
         <!-- CARD 3 -->
         <div class="art-card fade-up">
           <div class="art-card-img">
-            <!-- Add: pictures/blue-head.jpg -->
-            <img src="pictures/blue-head.jpg"
+            <img src="./blue-head.jpg"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  alt="Root System" />
             <div class="img-placeholder" style="display:none;">
-              <i class="bi bi-image"></i><span>pictures/blue-head.jpg</span>
+              <i class="bi bi-image"></i><span>blue-head.jpg</span>
             </div>
             <div class="art-card-overlay">
               <a class="overlay-wa"
@@ -692,12 +757,11 @@
         <!-- CARD 4 -->
         <div class="art-card fade-up">
           <div class="art-card-img">
-            <!-- Add: pictures/red-head.jpg -->
-            <img src="pictures/red-head.jpg"
+            <img src="./red-head.jpg"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  alt="The Hollow Head" />
             <div class="img-placeholder" style="display:none;">
-              <i class="bi bi-image"></i><span>pictures/red-head.jpg</span>
+              <i class="bi bi-image"></i><span>red-head.jpg</span>
             </div>
             <div class="art-card-overlay">
               <a class="overlay-wa"
@@ -725,12 +789,11 @@
         <!-- CARD 5 -->
         <div class="art-card fade-up">
           <div class="art-card-img">
-            <!-- Add: pictures/leaf-portrait.jpg -->
-            <img src="pictures/leaf-portrait.jpg"
+            <img src="./leaf-portrait.jpg"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  alt="Becoming Earth" />
             <div class="img-placeholder" style="display:none;">
-              <i class="bi bi-image"></i><span>pictures/leaf-portrait.jpg</span>
+              <i class="bi bi-image"></i><span>leaf-portrait.jpg</span>
             </div>
             <div class="art-card-overlay">
               <a class="overlay-wa"
@@ -758,12 +821,11 @@
         <!-- CARD 6 -->
         <div class="art-card fade-up">
           <div class="art-card-img">
-            <!-- Add: pictures/vinyl.jpg -->
-            <img src="pictures/vinyl.jpg"
+            <img src="./vinyl.jpg"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  alt="Side A" />
             <div class="img-placeholder" style="display:none;">
-              <i class="bi bi-image"></i><span>pictures/vinyl.jpg</span>
+              <i class="bi bi-image"></i><span>vinyl.jpg</span>
             </div>
             <div class="art-card-overlay">
               <a class="overlay-wa"
@@ -789,14 +851,13 @@
         </div>
 
         <!-- CARD 7 -->
-        <div class="art-card fade-up" style="grid-column: 1 / -1; max-width: calc(33.333% - 1rem);">
+        <div class="art-card fade-up card-7">
           <div class="art-card-img">
-            <!-- Add: pictures/mechanical-head.jpg -->
-            <img src="pictures/mechanical-head.jpg"
+            <img src="./mechanical-head.jpg"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  alt="The Machine Inside" />
             <div class="img-placeholder" style="display:none;">
-              <i class="bi bi-image"></i><span>pictures/mechanical-head.jpg</span>
+              <i class="bi bi-image"></i><span>mechanical-head.jpg</span>
             </div>
             <div class="art-card-overlay">
               <a class="overlay-wa"
@@ -830,14 +891,13 @@
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-5 fade-up">
-          <!-- Add: pictures/artist.jpg -->
-          <img src="pictures/artist.jpg"
+          <img src="./artist.jpg"
                class="about-img"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                alt="Winston Mojalefa Thekiso" />
           <div class="about-img-placeholder" style="display:none;">
             <i class="bi bi-person-square"></i>
-            <small>Add pictures/artist.jpg</small>
+            <small>Add artist.jpg</small>
           </div>
         </div>
         <div class="col-lg-7 fade-up">
@@ -900,8 +960,8 @@
         </div>
       </div>
     </div>
-  </section>
-
+              </section>
+                
   <!-- ══ CONTACT ══ -->
   <section id="contact">
     <div class="container fade-up">
@@ -983,23 +1043,8 @@
       const nav = document.querySelector('.navbar');
       nav.style.padding = window.scrollY > 60 ? '0.6rem 0' : '1rem 0';
     });
-
-    // Fix gallery last card on mobile
-    function fixLastCard() {
-      const lastCard = document.querySelector('.art-card[style*="grid-column"]');
-      if (window.innerWidth < 576) {
-        lastCard.style.gridColumn = '';
-        lastCard.style.maxWidth = '';
-      } else if (window.innerWidth < 992) {
-        lastCard.style.gridColumn = '';
-        lastCard.style.maxWidth = '';
-      } else {
-        lastCard.style.gridColumn = '1 / -1';
-        lastCard.style.maxWidth = 'calc(33.333% - 1rem)';
-      }
-    }
-    fixLastCard();
-    window.addEventListener('resize', fixLastCard);
   </script>
 </body>
-</html>
+      </html>
+        
+        
