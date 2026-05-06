@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Winston Mojalefa Thekiso — South African visual artist. Original paintings, pyrography and mixed-media works available direct from the studio." />
+  <title>Winston Mojalefa Thekiso · Visual Artist</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── CSS Variables ── */
+    :root {
+      --bg:        #0c0a07;
+      --bg2:       #141009;
+      --card-bg:   #1c1508;
+      --cream:     #f0e3c8;
+      --gold:      #c4893a;
+      --gold-lt:   #e2b06a;
+      --brown:     #7a5628;
+      --muted:     #7d6b50;
+      --border:    #2e2210;
+      --font-head: 'Cormorant Garamond', serif;
+      --font-body: 'Jost', sans-serif;
+    }
+
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+    /* ── Typography ── */
+    h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
+    .gold { color: var(--gold); }
+    .muted { color: var(--muted); }
+
+    /* ── Navbar ── */
+    .navbar {
+      background: rgba(12, 10, 7, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      transition: all 0.3s;
+    }
+    .navbar-brand {
+      font-family: var(--font-head);
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+      color: var(--cream) !important;
+    }
+    .navbar-brand span { color: var(--gold); }
+    .nav-link {
+      color: var(--muted) !important;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem !important;
+      transition: color 0.25s;
+    }
+    .nav-link:hover { color: var(--gold) !important; }
+    .navbar-toggler { border: 1px solid var(--border); }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23c4893a' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    .nav-wa-btn {
+      background: #25D366;
+      color: #fff !important;
+      border-radius: 30px;
+      padding: 0.35rem 1.1rem !important;
+      font-size: 0.78rem !important;
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.25s, transform 0.2s;
+      text-transform: none !important;
+    }
+    .nav-wa-btn:hover { background: #1ebe5d; transform: scale(1.03); }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 7rem 0 4rem;
+      gap: 2rem;
+    }
+    .hero-text h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .hero-text h1 em { color: var(--gold); font-style: italic; }
+    .hero-text p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin-top: 1.5rem;
+    }
+    .hero-buttons { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary-gold {
+      background: var(--gold);
+      color: #0c0a07;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.25s, transform 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary-gold:hover { background: var(--gold-lt); transform: translateY(-2px); color: #0c0a07; }
+    .btn-outline-cream {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid var(--border);
+      padding: 0.75rem 2rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-outline-cream:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-image-wrap {
+      position: relative;
+      height: 75vh;
+      max-height: 700px;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+      filter: brightness(0.88);
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: rgba(12,10,7,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      color: var(--cream);
+      padding: 0.6rem 1.1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      border-radius: 2px;
+    }
+
+    /* ── Marquee ── */
+    .marquee-wrap {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 0;
+      overflow: hidden;
+      background: var(--bg2);
+    }
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 28s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-track span {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .marquee-track span .dot { color: var(--gold); margin: 0 0.5rem; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── Section titles ── */
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+    }
+    .divider {
+      width: 50px;
+      height: 1px;
+      background: var(--gold);
+      margin: 1.5rem 0;
+    }
+
+    /* ── Gallery ── */
+    #gallery { padding: 6rem 0; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .art-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .art-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+    .art-card-img {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background: var(--bg2);
+    }
+    .art-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+      display: block;
+    }
+    .art-card:hover .art-card-img img { transform: scale(1.05); }
+    .art-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(12,10,7,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .art-card:hover .art-card-overlay { opacity: 1; }
+    .overlay-wa {
+      background: #25D366;
+      color: #fff;
+      padding: 0.65rem 1.5rem;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.2s;
+    }
+    .overlay-wa:hover { background: #1ebe5d; color: #fff; }
+    .art-card-body { padding: 1.2rem 1.4rem 1.4rem; }
+    .art-year { font-size: 0.7rem; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; }
+    .art-title { font-family: var(--font-head); font-size: 1.35rem; margin: 0.3rem 0 0.2rem; }
+    .art-medium { font-size: 0.78rem; color: var(--muted); }
+    .art-desc { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem; line-height: 1.6; }
+    .art-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1.4rem;
+      border-top: 1px solid var(--border);
+    }
+    .art-enquire {
+      font-size: 0.78rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: color 0.2s;
+    }
+    .art-enquire:hover { color: var(--gold-lt); }
+    /* Placeholder for missing images */
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg2);
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      gap: 0.5rem;
+    }
+    .img-placeholder i { font-size: 2rem; color: var(--border); }
+
+    /* ── About ── */
+    #about {
+      padding: 6rem 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 3px;
+      filter: brightness(0.85);
+    }
+    .about-img-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      gap: 0.5rem;
+    }
+    .about-img-placeholder i { font-size: 3rem; color: var(--border); }
+    .about-img-placeholder small { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .about-text h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; }
+    .stat-block {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .stat strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 2.5rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat span { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+    /* ── How to Buy ── */
+    #buy { padding: 6rem 0; }
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 2rem;
+      height: 100%;
+      transition: border-color 0.3s;
+    }
+    .step-card:hover { border-color: var(--gold); }
+    .step-num {
+      font-family: var(--font-head);
+      font-size: 3rem;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .step-card h4 { font-size: 1.3rem; margin-bottom: 0.6rem; }
+    .step-card p { color: var(--muted); font-size: 0.88rem; }
+
+    /* ── Contact strip ── */
+    #contact {
+      padding: 5rem 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    #contact h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+    #contact p { color: var(--muted); max-width: 520px; margin: 0 auto 2rem; }
+    .btn-wa-large {
+      background: #25D366;
+      color: #fff;
+      border: none;
+      padding: 1rem 2.5rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      border-radius: 3px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-wa-large:hover { background: #1ebe5d; color: #fff; transform: translateY(-2px); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 3rem 0 2rem;
+    }
+    .footer-brand {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .footer-brand span { color: var(--gold); }
+    .footer-links { list-style: none; padding: 0; }
+    .footer-links li { margin-bottom: 0.5rem; }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .footer-bottom {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.78rem; color: var(--muted); margin: 0; }
+
+    /* ── Floating WhatsApp ── */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      background: #25D366;
+      color: #fff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+      text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+      animation: pulse-wa 2.5s infinite;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(37,211,102,0.5); color: #fff; }
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 8px 30px rgba(37,211,102,0.4); }
+      50%       { box-shadow: 0 8px 50px rgba(37,211,102,0.65); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 991px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 6rem; }
+      .hero-image-wrap { height: 55vw; max-height: 400px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 575px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .hero-buttons { flex-direction: column; }
+      .btn-primary-gold, .btn-outline-cream { text-align: center; justify-content: center; }
+      .stat-block { gap: 1.5rem; }
+    }
+
+    /* ── Fade-in on scroll ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Thekiso <span>·</span> Studio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="nav-link nav-wa-btn"
+               href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%20came%20across%20your%20portfolio%20and%20I%27d%20love%20to%20chat%20about%20your%20work."
+               target="_blank">
+              <i class="bi bi-whatsapp"></i> WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero container" id="home">
+    <div class="hero-text fade-up">
+      <p class="section-label">South African Visual Artist</p>
+      <h1>Art that <em>roots</em><br>itself in you.</h1>
+      <p>Original paintings, pyrography, and mixed-media works — where nature, identity, and the human form become one. Buy direct. No gallery. No middleman.</p>
+      <div class="hero-buttons">
+        <a href="#gallery" class="btn-primary-gold">View Collection</a>
+        <a href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20your%20artwork.%20Can%20we%20chat%3F"
+           target="_blank" class="btn-outline-cream">
+          <i class="bi bi-whatsapp" style="color:#25D366;"></i> Message Winston
+        </a>
+      </div>
+    </div>
+    <div class="hero-image-wrap fade-up">
+      <!--
+        HERO IMAGE — add pictures/hero.jpg (your best piece)
+      -->
+      <img src="pictures/hero.jpg"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+           alt="Winston Thekiso artwork" />
+      <div class="img-placeholder" style="display:none; height:100%;">
+        <i class="bi bi-image"></i>
+        <span>Add pictures/hero.jpg</span>
+      </div>
+      <div class="hero-badge">
+        <span style="color:var(--gold);">✦</span> Originals · Direct from Studio
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MARQUEE ══ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Originals only <span class="dot">✦</span></span>
+      <span>Pyrography on wood <span class="dot">✦</span></span>
+      <span>Mixed media <span class="dot">✦</span></span>
+      <span>Buy direct via WhatsApp <span class="dot">✦</span></span>
+      <span>South African artist <span class="dot">✦</span></span>
+      <span>Nature &amp; identity <span class="dot">✦</span></span>
+      <span>One-of-a-kind works <span class="dot">✦</span></span>
+      <span>Originals only <span class="dot">✦</span></span>
+      <span>Pyrography on wood <span class="dot">✦</span></span>
+      <span>Mixed media <span class="dot">✦</span></span>
+      <span>Buy direct via WhatsApp <span class="dot">✦</span></span>
+      <span>South African artist <span class="dot">✦</span></span>
+      <span>Nature &amp; identity <span class="dot">✦</span></span>
+      <span>One-of-a-kind works <span class="dot">✦</span></span>
+    </div>
+  </div>
+
+  <!-- ══ GALLERY ══ -->
+  <section id="gallery">
+    <div class="container">
+      <div class="text-center mb-5 fade-up">
+        <p class="section-label">The Collection</p>
+        <h2 class="section-title">Featured Works</h2>
+        <div class="divider mx-auto"></div>
+        <p class="muted" style="max-width:520px;margin:0 auto;">Every piece is a one-of-a-kind original. Tap <em>Enquire</em> to open a WhatsApp conversation directly with Winston.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <!-- CARD 1 -->
+        <div class="art-card fade-up">
+          <div class="art-card-img">
+            <!-- Add: pictures/rose.jpg -->
+            <img src="pictures/rose.jpg"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 alt="The Earthen Rose" />
+            <div class="img-placeholder" style="display:none;">
+              <i class="bi bi-image"></i><span>pictures/rose.jpg</span>
+            </div>
+            <div class="art-card-overlay">
+              <a class="overlay-wa"
+                 href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22The%20Earthen%20Rose%22.%20Is%20it%20still%20available%3F"
+                 target="_blank">
+                <i class="bi bi-whatsapp"></i> Enquire
+              </a>
+            </div>
+          </div>
+          <div class="art-card-body">
+            <p class="art-year">2023</p>
+            <h3 class="art-title">The Earthen Rose</h3>
+            <p class="art-medium">Mixed media on canvas</p>
+            <p class="art-desc">A rose sculpted from earth itself — sand, texture and shadow converging into something that feels ancient and alive.</p>
+          </div>
+          <div class="art-card-footer">
+            <a class="art-enquire"
+               href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22The%20Earthen%20Rose%22.%20Is%20it%20still%20available%3F"
+               target="_blank">
+              <i class="bi bi-whatsapp"></i> Enquire on WhatsApp →
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="art-card fade-up">
+          <div class="art-card-img">
+            <!-- Add: pictures/leaf-face.jpg -->
+            <img src="pictures/leaf-face.jpg"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 alt="Wrapped in Leaves" />
+            <div class="img-placeholder" style="display:none;">
+              <i class="bi bi-image"></i><span>pictures/leaf-face.jpg</span>
+            </div>
+            <div class="art-card-overlay">
+              <a class="overlay-wa"
+                 href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22Wrapped%20in%20Leaves%22.%20Is%20it%20still%20available%3F"
+                 target="_blank">
+                <i class="bi bi-whatsapp"></i> Enquire
+              </a>
+            </div>
+          </div>
+          <div class="art-card-body">
+            <p class="art-year">2022</p>
+            <h3 class="art-title">Wrapped in Leaves</h3>
+            <p class="art-medium">Pyrography &amp; colour pencil on plywood</p>
+            <p class="art-desc">A portrait dissolving into organic form — the face and the forest as one, bound by dried tendrils and tangled growth.</p>
+          </div>
+          <div class="art-card-footer">
+            <a class="art-enquire"
+               href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22Wrapped%20in%20Leaves%22.%20Is%20it%20still%20available%3F"
+               target="_blank">
+              <i class="bi bi-whatsapp"></i> Enquire on WhatsApp →
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="art-card fade-up">
+          <div class="art-card-img">
+            <!-- Add: pictures/blue-head.jpg -->
+            <img src="pictures/blue-head.jpg"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 alt="Root System" />
+            <div class="img-placeholder" style="display:none;">
+              <i class="bi bi-image"></i><span>pictures/blue-head.jpg</span>
+            </div>
+            <div class="art-card-overlay">
+              <a class="overlay-wa"
+                 href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22Root%20System%22.%20Is%20it%20still%20available%3F"
+                 target="_blank">
+                <i class="bi bi-whatsapp"></i> Enquire
+              </a>
+            </div>
+          </div>
+          <div class="art-card-body">
+            <p class="art-year">2023</p>
+            <h3 class="art-title">Root System</h3>
+            <p class="art-medium">Ballpoint pen on paper</p>
+            <p class="art-desc">Veins, roots and branches replace flesh — the mind rendered as a living network, open and branching into the unknown.</p>
+          </div>
+          <div class="art-card-footer">
+            <a class="art-enquire"
+               href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22Root%20System%22.%20Is%20it%20still%20available%3F"
+               target="_blank">
+              <i class="bi bi-whatsapp"></i> Enquire on WhatsApp →
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="art-card fade-up">
+          <div class="art-card-img">
+            <!-- Add: pictures/red-head.jpg -->
+            <img src="pictures/red-head.jpg"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 alt="The Hollow Head" />
+            <div class="img-placeholder" style="display:none;">
+              <i class="bi bi-image"></i><span>pictures/red-head.jpg</span>
+            </div>
+            <div class="art-card-overlay">
+              <a class="overlay-wa"
+                 href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22The%20Hollow%20Head%22.%20Is%20it%20still%20available%3F"
+                 target="_blank">
+                <i class="bi bi-whatsapp"></i> Enquire
+              </a>
+            </div>
+          </div>
+          <div class="art-card-body">
+            <p class="art-year">2022</p>
+            <h3 class="art-title">The Hollow Head</h3>
+            <p class="art-medium">Colour pencil on plywood</p>
+            <p class="art-desc">A face reassembled from organic lattice — crimson channels weaving identity from the inside out, raw and unfiltered.</p>
+          </div>
+          <div class="art-card-footer">
+            <a class="art-enquire"
+               href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22The%20Hollow%20Head%22.%20Is%20it%20still%20available%3F"
+               target="_blank">
+              <i class="bi bi-whatsapp"></i> Enquire on WhatsApp →
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="art-card fade-up">
+          <div class="art-card-img">
+            <!-- Add: pictures/leaf-portrait.jpg -->
+            <img src="pictures/leaf-portrait.jpg"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 alt="Becoming Earth" />
+            <div class="img-placeholder" style="display:none;">
+              <i class="bi bi-image"></i><span>pictures/leaf-portrait.jpg</span>
+            </div>
+            <div class="art-card-overlay">
+              <a class="overlay-wa"
+                 href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22Becoming%20Earth%22.%20Is%20it%20still%20available%3F"
+                 target="_blank">
+                <i class="bi bi-whatsapp"></i> Enquire
+              </a>
+            </div>
+          </div>
+          <div class="art-card-body">
+            <p class="art-year">2020</p>
+            <h3 class="art-title">Becoming Earth</h3>
+            <p class="art-medium">Ballpoint pen on paper</p>
+            <p class="art-desc">Eyes closed, face submerged in foliage — a quiet surrender to nature, where the boundary between body and soil disappears.</p>
+          </div>
+          <div class="art-card-footer">
+            <a class="art-enquire"
+               href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22Becoming%20Earth%22.%20Is%20it%20still%20available%3F"
+               target="_blank">
+              <i class="bi bi-whatsapp"></i> Enquire on WhatsApp →
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="art-card fade-up">
+          <div class="art-card-img">
+            <!-- Add: pictures/vinyl.jpg -->
+            <img src="pictures/vinyl.jpg"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 alt="Side A" />
+            <div class="img-placeholder" style="display:none;">
+              <i class="bi bi-image"></i><span>pictures/vinyl.jpg</span>
+            </div>
+            <div class="art-card-overlay">
+              <a class="overlay-wa"
+                 href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22Side%20A%22.%20Is%20it%20still%20available%3F"
+                 target="_blank">
+                <i class="bi bi-whatsapp"></i> Enquire
+              </a>
+            </div>
+          </div>
+          <div class="art-card-body">
+            <p class="art-year">2023</p>
+            <h3 class="art-title">Side A</h3>
+            <p class="art-medium">Mixed media on vinyl &amp; wood</p>
+            <p class="art-desc">Where music meets memory — dried roses painted on a vinyl label, encased in a wooden frame that itself becomes part of the art.</p>
+          </div>
+          <div class="art-card-footer">
+            <a class="art-enquire"
+               href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22Side%20A%22.%20Is%20it%20still%20available%3F"
+               target="_blank">
+              <i class="bi bi-whatsapp"></i> Enquire on WhatsApp →
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="art-card fade-up" style="grid-column: 1 / -1; max-width: calc(33.333% - 1rem);">
+          <div class="art-card-img">
+            <!-- Add: pictures/mechanical-head.jpg -->
+            <img src="pictures/mechanical-head.jpg"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 alt="The Machine Inside" />
+            <div class="img-placeholder" style="display:none;">
+              <i class="bi bi-image"></i><span>pictures/mechanical-head.jpg</span>
+            </div>
+            <div class="art-card-overlay">
+              <a class="overlay-wa"
+                 href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22The%20Machine%20Inside%22.%20Is%20it%20still%20available%3F"
+                 target="_blank">
+                <i class="bi bi-whatsapp"></i> Enquire
+              </a>
+            </div>
+          </div>
+          <div class="art-card-body">
+            <p class="art-year">2022</p>
+            <h3 class="art-title">The Machine Inside</h3>
+            <p class="art-medium">Pyrography &amp; colour pencil on wood</p>
+            <p class="art-desc">A profile built of gears, circuits and chambers — the human head reimagined as beautiful, intricate machinery.</p>
+          </div>
+          <div class="art-card-footer">
+            <a class="art-enquire"
+               href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27m%20interested%20in%20%22The%20Machine%20Inside%22.%20Is%20it%20still%20available%3F"
+               target="_blank">
+              <i class="bi bi-whatsapp"></i> Enquire on WhatsApp →
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /gallery-grid -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 fade-up">
+          <!-- Add: pictures/artist.jpg -->
+          <img src="pictures/artist.jpg"
+               class="about-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+               alt="Winston Mojalefa Thekiso" />
+          <div class="about-img-placeholder" style="display:none;">
+            <i class="bi bi-person-square"></i>
+            <small>Add pictures/artist.jpg</small>
+          </div>
+        </div>
+        <div class="col-lg-7 fade-up">
+          <div class="about-text">
+            <p class="section-label">The Artist</p>
+            <h2>Winston Mojalefa<br><span class="gold">Thekiso</span></h2>
+            <div class="divider"></div>
+            <p>Winston Mojalefa Thekiso is a South African visual artist whose work sits at the intersection of the natural world and the human form. Working primarily in pyrography, ballpoint pen, and mixed media, he explores themes of identity, organic growth, and the mechanics of being.</p>
+            <p>Each piece is painstakingly hand-rendered — no prints, no reproductions. What you see is exactly what you get: a singular, original object made by a single set of hands over many hours of focused work.</p>
+            <p>His works have been described as meditations in material — earning their marks through patience, precision, and an uncommon depth of imagination.</p>
+            <div class="stat-block">
+              <div class="stat">
+                <strong>7+</strong>
+                <span>Years creating</span>
+              </div>
+              <div class="stat">
+                <strong>100%</strong>
+                <span>Original works</span>
+              </div>
+              <div class="stat">
+                <strong>ZA</strong>
+                <span>South Africa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HOW TO BUY ══ -->
+  <section id="buy">
+    <div class="container">
+      <div class="text-center mb-5 fade-up">
+        <p class="section-label">Simple Process</p>
+        <h2 class="section-title">How to Get a Piece</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 fade-up">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <h4>Browse the Collection</h4>
+            <p>Look through the gallery above. Every work is an original — once it's gone, it's gone. Take your time.</p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up">
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <h4>Message Winston</h4>
+            <p>Tap any <em style="color:var(--gold);">Enquire on WhatsApp</em> link. Ask about dimensions, medium, framing, price, or the story behind the work.</p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up">
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <h4>It's Yours</h4>
+            <p>Agree on payment and collection or delivery. The piece is carefully packed and comes straight from the studio to you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section id="contact">
+    <div class="container fade-up">
+      <p class="section-label">Get in Touch</p>
+      <h2>Interested in a work?</h2>
+      <p>Whether you have a question, want to know about pricing, or just want to chat about a piece — Winston is one message away.</p>
+      <a class="btn-wa-large"
+         href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%20found%20your%20portfolio%20and%20I%27d%20love%20to%20chat%20about%20your%20artwork."
+         target="_blank">
+        <i class="bi bi-whatsapp" style="font-size:1.2rem;"></i>
+        Chat on WhatsApp
+      </a>
+      <p style="margin-top:1.5rem; font-size:0.82rem;" class="muted">
+        <i class="bi bi-telephone"></i>&nbsp;
+        <a href="tel:+27828353215" style="color:var(--muted); text-decoration:none;">+27 82 835 3215</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="footer-brand">Thekiso <span>Studio</span></div>
+          <p class="muted" style="font-size:0.85rem; max-width:320px; margin-top:0.5rem;">Original artworks sold directly from the studio. No gallery, no middlemen — just the work and a conversation.</p>
+        </div>
+        <div class="col-lg-3">
+          <p class="footer-label">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <p class="footer-label">Direct Line</p>
+          <a href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%27d%20like%20to%20talk%20about%20your%20work."
+             target="_blank"
+             style="color:var(--gold); text-decoration:none; font-size:1.1rem; font-family:var(--font-head);">
+            +27 82 835 3215
+          </a>
+          <p class="muted" style="font-size:0.8rem; margin-top:0.5rem;">WhatsApp preferred</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Winston Mojalefa Thekiso. All works are originals.</p>
+        <p>South Africa</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ FLOATING WHATSAPP ══ -->
+  <a class="wa-float"
+     href="https://wa.me/27828353215?text=Hi%20Winston%2C%20I%20have%20a%20question%20about%20your%20artwork."
+     target="_blank"
+     title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    faders.forEach(el => observer.observe(el));
+
+    // Navbar shrink on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.navbar');
+      nav.style.padding = window.scrollY > 60 ? '0.6rem 0' : '1rem 0';
+    });
+
+    // Fix gallery last card on mobile
+    function fixLastCard() {
+      const lastCard = document.querySelector('.art-card[style*="grid-column"]');
+      if (window.innerWidth < 576) {
+        lastCard.style.gridColumn = '';
+        lastCard.style.maxWidth = '';
+      } else if (window.innerWidth < 992) {
+        lastCard.style.gridColumn = '';
+        lastCard.style.maxWidth = '';
+      } else {
+        lastCard.style.gridColumn = '1 / -1';
+        lastCard.style.maxWidth = 'calc(33.333% - 1rem)';
+      }
+    }
+    fixLastCard();
+    window.addEventListener('resize', fixLastCard);
+  </script>
+</body>
+</html>
